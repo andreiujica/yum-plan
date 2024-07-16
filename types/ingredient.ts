@@ -5,4 +5,9 @@ export interface Ingredient {
   icon: string;
   unit: string;
 }
+
+export interface IngredientTotal {
+  ingredientId: number;
+  totalQuantity: number;
+}
   

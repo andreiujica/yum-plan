@@ -5,5 +5,6 @@
       <span class="text-2xl font-bold">Yum</span>
       <span class="text-2xl text-blue-400 font-bold">Plan</span>
     </div>
+    <UBadge color="blue" variant="soft" size="sm">v0.1</UBadge>
   </div>
 </template>

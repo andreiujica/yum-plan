@@ -5,5 +5,8 @@ export default defineNuxtConfig({
   ui: {
     icons: ['tabler'],
   },
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  colorMode: {
+    preference: 'dark'
+  }
 })
