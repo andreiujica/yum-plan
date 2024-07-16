@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import recipesData from '~/server/data/recipes';
-import type { Recipe } from '~/types/recipe';
+import type { Recipe, RecipeItem } from '~/types/recipe';
 
 export const useRecipesStore = defineStore('recipes', {
   state: () => ({
@@ -12,6 +12,16 @@ export const useRecipesStore = defineStore('recipes', {
     getRecipes: (state) => state.recipes,
     getRecipeById: (state) => (id: number) => {
       return state.recipes.find((recipe) => recipe.id === id);
+    },
+    getNumberOfIngredients: (state) => (recipe: Recipe) => {
+      return recipe.ingredients.length;
+    },
+    getHumanReadableIngredientsListForRecipe: (state) => (recipe: Recipe) => {
+      const ingredientsStore = useIngredientsStore();
+      return recipe.ingredients.map((item: RecipeItem) => {
+        const ingredient = ingredientsStore.getIngredientById(item.ingredientId);
+        return ingredient ? `${item.quantity} ${ingredient.unit} of ${ingredient.name}` : 'Unknown ingredient';
+      });
     },
   },
   actions: {

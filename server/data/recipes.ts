@@ -18,8 +18,8 @@ const recipes: Recipe[] = [
       { quantity: 100, ingredientId: 4 },  
       { quantity: 150, ingredientId: 6 }   
     ],
-    iconName: "mdi:flour",
-    iconColor: "#ff0000"
+    iconName: "i-tabler-cake",
+    iconColor: "blue"
   },
   {
     id: 2,
