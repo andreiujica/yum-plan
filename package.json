@@ -17,6 +17,7 @@
     "nuxt": "^3.12.3"
   },
   "dependencies": {
-    "@iconify-json/tabler": "^1.1.117"
+    "@iconify-json/tabler": "^1.1.117",
+    "yup": "^1.4.0"
   }
 }
