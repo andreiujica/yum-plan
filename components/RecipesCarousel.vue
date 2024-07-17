@@ -36,7 +36,7 @@
       <RecipeCard :recipe="item" />
     </UCarousel>
   </div>
-  <RecipeForm v-model="slideOverOpen" />
+  <RecipeForm v-model="slideOverOpen" @close="slideOverOpen = false" />
 </template>
 
 <script setup lang="ts">

@@ -67,6 +67,10 @@
 import { number, string, array, object, type InferType } from "yup";
 import type { FormSubmitEvent } from "#ui/types";
 
+// The defineEmits function will be used to define the close event
+// that will be emitted when the slideover is closed
+const emit = defineEmits(["close"]);
+
 const ingredientsStore = useIngredientsStore();
 const recipesStore = useRecipesStore();
 
@@ -88,10 +92,16 @@ const recipeSchema = object({
 type Schema = InferType<typeof recipeSchema>;
 
 // The state which will be used to store the form data
-const state = reactive({
+const initialState = () => ({
   name: "",
   ingredients: [{ ingredientId: 0, quantity: 0 }],
 });
+
+const state = reactive(initialState());
+
+const resetState = () => {
+  Object.assign(state, initialState());
+};
 
 // These functions are used to add and remove ingredients from the form
 const addIngredient = () => {
@@ -103,8 +113,13 @@ const removeIngredient = (index: number) => {
 };
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
+  console.log(event.data);
   try {
-    recipesStore.createRecipe(state);
+    // We need to create a copy of the state to avoid reactivity issues
+    const recipeData = { ...state };
+    recipesStore.createRecipe(recipeData);
+    resetState();
+    emit("close");
   } catch (error) {
     console.error(error);
   }
