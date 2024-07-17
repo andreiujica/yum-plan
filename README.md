@@ -26,3 +26,11 @@ Start the development server on `http://localhost:3000`:
 # yarn
 yarn dev
 ```
+
+## Testing
+
+You can run the tests using Playwright (headless mode is disabled by default):
+
+```bash
+yarn playwright test
+```
