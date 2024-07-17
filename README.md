@@ -2,7 +2,7 @@
 
 A simple cake planner app that allows users to plan their cake orders, create new recipes and manage their ingredients.
 
-<img width="1676" alt="Screenshot 2024-07-17 at 11 40 15" src="https://github.com/user-attachments/assets/81c4c64d-159c-4dfe-ab63-45f9217d04f4">
+https://github.com/user-attachments/assets/1a4db120-c41d-45d6-aa49-fa5127061921
 
 ## Setup
 
