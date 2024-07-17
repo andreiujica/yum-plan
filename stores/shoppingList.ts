@@ -11,6 +11,9 @@ export const useShoppingListStore = defineStore("shoppingList", {
   getters: {
     getShoppingList: (state) => state.recipes,
     getShoppingListTotalPerIngredient: (state) => {
+      // This getter uses a map to keep track of the total quantity of each ingredient
+      // and then returns a list of strings like ["200 grams of flour", "1 egg", ...]
+      // which represent the total quantity of each ingredient needed for all the recipes in the shopping list.
       const totals: Record<number, number> = {};
 
       if (state.recipes) {
