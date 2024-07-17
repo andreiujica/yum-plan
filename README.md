@@ -13,9 +13,6 @@ Make sure to install the dependencies and the Playwright dependencies:
 # yarn
 yarn install
 yarn playwright install
-
-# bun
-bun install
 ```
 
 ## Development Server
